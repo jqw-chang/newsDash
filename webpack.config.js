@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   context: __dirname + "/client",
-  entry: './main.jsx',
+  entry: './index.jsx',
   output: {
     path: __dirname + '/build',
     filename: 'webpack-bundle.js'
@@ -20,15 +20,12 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           cacheDirectory: true,
-          presets: ['react', 'es2015']
+          presets: ['react', 'env']
         }
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader']
-        })
+        use: ['style-loader', 'css-loader']
       },
     ]
   }
