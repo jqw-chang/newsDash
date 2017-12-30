@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "build-dev": "webpack-dev-server",
+    "build": "webpack",
+    "start": "node server/server.js",
+    "start-dev": "nodemon server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,14 +18,18 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
+    "nodemon": "^1.14.3",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "pg": "^7.4.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "sequelize": "^4.28.6"
   }
 }
